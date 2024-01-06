@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.splash {
+  display: grid;
+  grid-template-rows: 700px 80px 80px;
+  align-items: center;
+  text-align: center;
+}
+
+.h1 {
+  font-size: 70px;
+  font-family: 'Cookie', cursive !important;
+  color: #434b54;
+}
+
+.sign-in {
+  text-decoration: none;
+  background-color: #3778c2;
+  color: white;
+  border-radius: 2px;
+  margin: 0 20px;
+  padding: 22px;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #434b54;
+}
+
+.navbar {
+  background-color: #3778c2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 12px;
+  margin-bottom: 18px;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.main {
+  min-height: 770px;
+  background-color: #d3d3d3;
+}
+
+.log-submit {
+  border: none;
+  background-color: #3778c2;
+  color: white;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.back-icon {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+.label-1 {
+  display: none;
+}
+
+.field-1,
+.field-1-2 {
+  padding: 12px 8px;
+  width: 100%;
+  border: 1px solid #434b54;
+  font-size: 18px;
+}
+
+.field-1-2 {
+  border-top: none;
+  margin-bottom: 18px;
+}
+
+.shared-links,
+.shared-links-1 {
+  text-decoration: none;
+  text-align: center;
+  color: #434b54;
+  font-style: italic;
+  margin-left: 30%;
+  font-size: 18px;
+}
+
+.shared-links-1 {
+  margin-left: 0;
+  text-align: center;
+  list-style: none;
+  color: red;
+}
+
+.footer {
+  padding: 22px;
+  background-color: #5fb523;
+  color: white;
+  text-align: center;
+}
+
+.btn {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 12px 110px;
+  cursor: pointer;
+  background-color: #5fb523;
+}
+
+.list {
+  list-style: none;
+  border: 1px solid white;
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 100px 200px 100px;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.category-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 90px;
+}
+
+.name,
+.date {
+  text-decoration: none;
+  color: #434b54;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: 300;
+}

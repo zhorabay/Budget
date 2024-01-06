@@ -1,6 +1,7 @@
-class Transaction < ApplicationRecord
-  has_many :transactions_categories, dependent: :destroy
-  has_many :categories, through: :transactions_categories
+class Payment < ApplicationRecord
+  has_many :category_payments
+  has_many :categories, through: :category_payments
+
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   validates :name, presence: true

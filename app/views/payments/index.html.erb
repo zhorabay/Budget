@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "style" %>
+
+<div class="categories-index">
+  <header class="navbar">
+    <%= link_to '<', categories_path, class: 'back-icon' %>
+    <h2 class="header">TRANSACTIONS</h2>
+  </header>
+  <ul class='main'>
+    <% @payments.each do |payment| %>
+        <li class='list'>
+        <div class="category-info">
+            <span class="name"><%= payment.name %></span>
+            <span class="date"><%= payment.created_at.strftime('%d %b %Y') %></span>
+        </div>
+        <span class="amount">$<%= payment.amount %></span>
+        <%= link_to "Delete", category_payment_path(@category, payment), method: :delete, data: { confirm: 'Are you sure?', turbo: false }, class: "delete" %>
+        </li>
+    <% end %>
+  </ul>
+  <footer class="footer">
+    <%= link_to "ADD", new_category_payment_path, class: "btn", data: { turbo: false }  %>
+  </footer>
+</div>
