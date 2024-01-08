@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_categories, only: [:index, :new]
+  before_action :set_categories, only: %i[index new]
 
   def index
     @categories = current_user.categories

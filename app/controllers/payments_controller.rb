@@ -18,12 +18,12 @@ class PaymentsController < ApplicationController
   def create
     @payment = current_user.payments.new(payment_params)
     @categories = Category.where(id: payment_params[:category_ids])
-  
+
     if @payment.save
       @categories.each do |category|
         category.payments << @payment unless category.payments.include?(@payment)
       end
-      flash[:success] = "Transaction was created!"
+      flash[:success] = 'Transaction was created!'
       redirect_to category_payments_path(params[:category_id])
     else
       flash.now[:error] = @payment.errors.full_messages.to_sentence
