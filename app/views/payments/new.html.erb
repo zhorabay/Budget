@@ -2,6 +2,7 @@
   <header class="navbar">
     <%= link_to '<', category_payments_path, class: 'back-icon' %>
     <h2 class="header">NEW TRANSACTION</h2>
+    <span>WW</span>
   </header>
 
   <%= form_with(model: @payment, url: category_payments_path, class: "form") do |f| %>
@@ -15,11 +16,10 @@
       <%= f.text_field :amount, autofocus: true, autocomplete: "amount", placeholder: "0.00", class: 'field-1' %>
     </div>
 
-    <div class="field">
+    <div class="checkbox">
       <%= f.label :categories, class: "label-1" %><br />
       <%= f.collection_check_boxes :category_ids, current_user.categories, :id, :name, :include_hidden => false %>
-      <span>No matching category?</span>
-      <%= link_to "Add a new category", new_category_path, data: { turbo: false }, class: "btn"  %>
+      <%= link_to "Add a new category", new_category_path, data: { turbo: false }, class: "btn-1"  %>
     </div>
 
     <div class="actions">
