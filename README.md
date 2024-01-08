@@ -57,13 +57,13 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-The Live Demo is available [here]()
+The Live Demo is available [here](https://budget-f9if.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Video Presentation <a name="video-presentation"></a>
 
-The Video Presentation is available [here]()
+The Video Presentation is available [here](https://drive.google.com/file/d/1Qzuwty0TnazKDh_fAbLE8vUQiwB2ur43/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
