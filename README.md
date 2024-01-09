@@ -57,7 +57,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-The Live Demo is available [here](https://budget-f9if.onrender.com)
+The Live Demo is available [here](https://budget-app-ub0v.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
