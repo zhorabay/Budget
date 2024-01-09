@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:index]
   resources :categories, only: [:index, :new, :create] do
     resources :payments, only: [:index, :new, :create]
   end
