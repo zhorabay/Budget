@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe CategoriesController, type: :controller do
   let(:user) { User.create(name: 'Assem', email: 'assem@example.com', password: 'password123') }
 
-  before { sign_in user }
+  before do   
+    user.confirm
+    sign_in user
+  end
 
   describe 'GET #index' do
     it 'assigns @categories' do

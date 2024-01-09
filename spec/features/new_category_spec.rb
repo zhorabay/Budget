@@ -4,6 +4,7 @@ RSpec.feature 'New Category Page', type: :feature do
   let(:user) { User.create(name: 'Assem', email: 'assem@example.com', password: 'password123') }
 
   before do
+    user.confirm
     sign_in user
     visit new_category_path
   end

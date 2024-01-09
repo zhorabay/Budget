@@ -5,6 +5,7 @@ RSpec.describe 'New Transaction Page', type: :feature do
   let(:category) { Category.create(author_id: user.id, name: 'Food', icon: 'https://i.pravatar.cc/300?img=1') }
 
   before do
+    user.confirm
     sign_in user
     visit new_category_payment_path(category)
   end

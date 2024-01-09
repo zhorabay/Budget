@@ -5,7 +5,10 @@ RSpec.describe PaymentsController, type: :controller do
   let(:category) { Category.create(author_id: user.id, name: 'Food', icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/800px-Good_Food_Display_-_NCI_Visuals_Online.jpg') }
   let(:payment) { Payment.create(author_id: user.id, category_ids: [category.id], name: 'KFC', amount: '23') }
 
-  before { sign_in user }
+  before do   
+    user.confirm
+    sign_in user
+  end
 
   describe 'GET #index' do
     context 'with valid category_id' do

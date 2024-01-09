@@ -6,6 +6,7 @@ RSpec.feature 'Categories Index Page', type: :feature do
   let!(:category2) { Category.create(author: user, name: 'Electronics', icon: 'https://i.pravatar.cc/300?img=2') }
 
   before do
+    user.confirm
     sign_in user
     visit categories_path
   end

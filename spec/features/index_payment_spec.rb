@@ -7,6 +7,7 @@ RSpec.feature 'Transactions Page', type: :feature do
   let!(:payment2) { Payment.create(author: user, category_ids: [category.id], name: 'Electronics', amount: 100) }
 
   before do
+    user.confirm
     sign_in user
     visit category_payments_path(category)
   end

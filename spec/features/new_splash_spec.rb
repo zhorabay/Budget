@@ -36,8 +36,8 @@ RSpec.describe 'Splash New', type: :feature do
       visit new_user_session_path
     end
 
-    it 'redirects me to categories page' do
-      expect(page).to have_current_path(authenticated_root_path)
+    it 'redirects me to sign in page' do
+      expect(page).to have_current_path(new_user_session_path)
     end
   end
 
