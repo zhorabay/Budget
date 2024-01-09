@@ -58,7 +58,9 @@ RSpec.describe PaymentsController, type: :controller do
 
   describe 'POST #create' do
     it 'creates a new payment' do
-      expect(post(:create, params: { category_id: category.id, payment: { name: 'KFC', amount: '23', category_ids: [category.id] } })).to change(Payment, :count).by(1)
+      expect {
+        post :create, params: { category_id: category.id, payment: { name: 'KFC', amount: '23', category_ids: [category.id] } }
+      }.to change(Payment, :count).by(1)
     end
 
     it 'redirects to category_payments_path' do
@@ -68,7 +70,9 @@ RSpec.describe PaymentsController, type: :controller do
 
     context 'with invalid attributes' do
       it 'does not create a new payment' do
-        expect(post(:create, params: { category_id: category.id, payment: { name: nil, amount: '23', category_ids: [category.id] } })).not_to change(Payment, :count)
+        expect {
+          post :create, params: { category_id: category.id, payment: { name: nil, amount: '23', category_ids: [category.id] } }
+        }.not_to change(Payment, :count)
       end
     end
   end

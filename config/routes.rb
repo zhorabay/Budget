@@ -10,8 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories, only: [:index, :show, :new, :create, :destroy] do
-    resources :payments, only: [:index, :show, :new, :create, :destroy]
+  resources :categories, only: [:index, :new, :create] do
+    resources :payments, only: [:index, :new, :create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

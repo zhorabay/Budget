@@ -32,7 +32,9 @@ RSpec.describe CategoriesController, type: :controller do
   describe 'POST #create' do
     context 'with valid attributes' do
       it 'creates a new category' do
-        expect(post(:create, params: { category: { name: 'New Category', icon: 'icon.png' } })).to change(Category, :count).by(1)
+        expect {
+          post :create, params: { category: { name: 'New Category', icon: 'icon.png' } }
+        }.to change(Category, :count).by(1)
       end
 
       it 'redirects to the categories index page' do
@@ -43,7 +45,9 @@ RSpec.describe CategoriesController, type: :controller do
 
     context 'with invalid attributes' do
       it 'does not create a new category' do
-        expect(post(:create, params: { category: { name: nil, icon: 'icon.png' } })).not_to change(Category, :count)
+        expect {
+          post :create, params: { category: { name: nil, icon: 'icon.png' } }
+        }.not_to change(Category, :count)
       end
 
       it 'renders the new template with unprocessable_entity status' do
