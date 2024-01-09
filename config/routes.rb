@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'users/confirmations' }
   
   devise_scope :user do
     authenticated :user do
@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     unauthenticated :user do
       root :to => 'splash#new', as: :unauthenticated_root
     end
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :users, only: [:index]
   resources :categories, only: [:index, :new, :create] do
     resources :payments, only: [:index, :new, :create]
   end

@@ -2,7 +2,9 @@
 
 <div class="categories-index">
   <header class="navbar">
+    <span>WW</span>
     <h2 class="header">CATEGORIES</h2>
+    <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "sign-out" %>
   </header>
   <ul class='main'>
     <% @categories.each do |category| %>
