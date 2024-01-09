@@ -2,7 +2,7 @@ databases:
   - name: budget_app
     ipAllowList: []
     databaseName: budget_app
-    user: postgres
+    user: assem
     plan: free
 
 services:
