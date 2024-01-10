@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "style" %>
+
+<div class="categories-index">
+  <header class="navbar">
+    <%= link_to '<', categories_path, class: 'back-icon' %>
+    <h2 class="header">TRANSACTIONS</h2>
+    <span>WW</span>
+  </header>
+  <% @categories.each do |category| %>
+    <% total_amount = category.payments.sum(:amount) %>
+    <span class="amount">Total amount: $<%= total_amount %></span>
+  <% end %>
+  <ul class='main-t'>
+    <% @payments.each do |payment| %>
+      <li class='list'>
+        <span class="name"><%= payment.name %></span>
+        <span class="date"><%= payment.created_at.strftime('%d %b %Y') %></span>
+        <span class="amount">$<%= payment.amount %></span>
+      </li>
+    <% end %>
+  </ul>
+  <footer class="footer">
+    <%= link_to "ADD PAYMENT", new_category_payment_path, class: "btn", data: { turbo: false }  %>
+  </footer>
+</div>

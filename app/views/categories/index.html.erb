@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "style" %>
+
+<div class="categories-index">
+  <header class="navbar">
+    <span>WW</span>
+    <h2 class="header">CATEGORIES</h2>
+    <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "sign-out" %>
+  </header>
+  <ul class='main'>
+    <% @categories.each do |category| %>
+        <% total_amount = category.payments.sum(:amount) %>
+        <li class='list'>
+        <%= image_tag(category.icon, class: 'icon', alt: 'category_icon') %>
+        <div class="category-info">
+            <%= link_to category.name, category_payments_path(category), class: 'name' %>
+            <span class="date"><%= category.created_at.strftime('%d %b %Y') %></span>
+        </div>
+        <span class="amount">$<%= total_amount %></span>
+        </li>
+    <% end %>
+  </ul>
+  <footer class="footer">
+    <%= link_to "ADD CATEGORY", new_category_path, class: "btn", data: { turbo: false }  %>
+  </footer>
+</div>

@@ -1,0 +1,16 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <header class="navbar">
+    <%= link_to '<', unauthenticated_root_path, class: 'back-icon' %>
+    <h2 class="header">RESET PASSWORD</h2>
+    <%= f.submit "Send", class: "log-submit" %>
+  </header>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email, class: 'label-1' %><br />
+    <%= f.email_field :email, placeholder: true, autofocus: true, autocomplete: "email", class: 'field-1' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
